@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+    "settings": {
+        "files.exclude": {
+            "**/*.code-workspace": true,
+            "**/*.elf": true,
+            "**/*.gba": true,
+            "**/*.sav": true,
+            "**/build": true,
+            "**/.vscode": true
+        },
+        "makefile.configureOnOpen": false,
+    }
+}

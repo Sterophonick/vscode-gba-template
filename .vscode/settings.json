@@ -1,0 +1,9 @@
+{
+    "C_Cpp.default.includePath": [
+        "/opt/devkitpro/libheart/include",
+        "/opt/devkitpro/libgba/include/",
+        "/opt/devkitpro/libtonc/include/",
+        "/opt/devkitpro/devkitARM/arm-none-eabi/include/",
+        "/opt/devkitpro/devkitARM/arm-none-eabi/include/c++/14.1.0/",
+    ],
+}

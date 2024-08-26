@@ -1,0 +1,103 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+
+    // FOR ANYONE ELSE WHO SEES THIS
+    // YOU MIGHT NEED TO ALTER THESE COMMANDS FOR YOUR OS
+    // I USE ARCH LINUX SO YEAH
+    // I WOULD RECOMMEND INSTALLING SOMETHING LIKE XYZ RUN TASKS so that you can easily access them
+
+    "version": "2.0.0",
+    "tasks": [
+        { 
+            "label": "stop-emulation",
+            "type":"shell",
+            "command": "pkill -15 mgba-qt"
+        },
+        {
+            "label": "make debug",
+            "type": "process",
+            "command": "make",
+            "args": ["DEBUG=1"],
+            "problemMatcher": []
+        },
+        {
+            "label": "make release",
+            "type": "process",
+            "command": "make",
+            "args": ["DEBUG=0"],
+            "problemMatcher": []
+        },
+        {
+            //"dependsOn":"stop-emulation",
+            "label": "make clean",
+            "type": "shell",
+            "command": "make clean"
+        },
+        {
+            "label": "gdb-debug",
+            "type": "shell",
+            "dependsOn": ["make debug"],
+            "isBackground": true,
+            "linux":{
+                "command": "/usr/bin/mgba-qt",
+                "args": ["-g", "${workspaceFolder}/${workspaceFolderBasename}.elf"]
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": [
+                {
+                  "pattern": [
+                    {
+                      "regexp": ".",
+                      "file": 1,
+                      "location": 2,
+                      "message": 3
+                    }
+                  ],
+                  "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": ".",
+                  }
+                }
+              ]
+        },
+        {
+            "dependsOn":"make release",
+            "label": "Run in mGBA",
+            "type": "shell",
+            "isBackground": true,
+            "command": "/usr/bin/mgba-qt ${workspaceFolder}/${workspaceFolderBasename}.gba",
+            "problemMatcher": []
+        },
+        {
+            // AUR: usenti
+            "label": "Launch Usenti",
+            "type": "shell",
+            "isBackground": true,
+            "command": "/usr/bin/usenti",
+            "problemMatcher": []
+        },
+        {
+            // AUR: nocashgba-debugger
+            "dependsOn":"make release",
+            "label": "Run in No$GBA",
+            "type": "shell",
+            "isBackground": true,
+            "command": "/usr/bin/nocashgba-debugger ${workspaceFolder}/${workspaceFolderBasename}.gba",
+            "problemMatcher": []
+        },
+        {
+            // AUR: openmpt
+            "label": "Launch OpenMPT",
+            "type": "shell",
+            "isBackground": true,
+            "command": "/usr/bin/openmpt",
+            "problemMatcher": []
+        }
+    ]
+}
