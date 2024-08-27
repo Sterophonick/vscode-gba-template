@@ -4,5 +4,6 @@
 int main(void)
 {
 	hrt_Init();
+	REG_DISPCNT &= 0xFF7F;
 	return 0;
 }

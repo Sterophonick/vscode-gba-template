@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "name": "linux-gcc-x64",
+      "includePath": [
+        "/opt/devkitpro/devkitARM/arm-none-eabi/include/",
+        "/opt/devkitpro/devkitARM/arm-none-eabi/include/c++/14.1.0/",
+        "/opt/devkitpro/libheart/include/",
+        "/opt/devkitpro/libgba/include/",
+        "${workspaceFolder}/include/",
+        "${workspaceFolder}/build/"
+      ],
+      "compilerPath": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "gcc-arm",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}
