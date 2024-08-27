@@ -10,3 +10,8 @@ this template is primarily made with Linux in mind, you will likely need to upda
 
 # Debugging
 The GDB server works as it should, thank god.
+
+# Editing / Adapting
+This template can be altered to fit many different needs.<br/>
+If you adapt it to fit an older SDK (tested with GCC 3.2.2), you wll be unable to use the older GDB.<br/>
+Instead use `arm-none-eabi-gdb` from devkitPro.<br/>
