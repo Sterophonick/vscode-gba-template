@@ -30,7 +30,7 @@ MUSIC		:= data/snd
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH	:=	-mthumb -mthumb-interwork
+ARCH	:=	-marm -mthumb-interwork
 
 ifeq ($(DEBUG),1) 
 	CFLAGS	:=	-gdwarf-2 -Wall -mcpu=arm7tdmi -mtune=arm7tdmi $(ARCH)

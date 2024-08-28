@@ -11,11 +11,11 @@ int main(void)
 	hrt_DSPSetBGMode(3);
 	hrt_DSPEnableBG(2);
 	hrt_DSPDisableForceBlank();
-	hrt_EnableGreenSwap();
 	hrt_LZ77UnCompVRAM((void*)l1Bitmap, (void*)VRAM);
 	while(1)
 	{
 		hrt_VBlankIntrWait();
+		hrt_ToggleGreenSwap();
 		tempVar++;
 	}
 	return 0;
