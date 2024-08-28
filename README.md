@@ -15,3 +15,8 @@ The GDB server works as it should, thank god.
 This template can be altered to fit many different needs.<br/>
 If you adapt it to fit an older SDK (tested with GCC 3.2.2), you wll be unable to use the older GDB.<br/>
 Instead use `arm-none-eabi-gdb` from devkitPro.<br/>
+
+# Arch Linux users
+HAM v2.71 for Linux can be installed via [this AUR package](https://aur.archlinux.org/packages/ham-v2.71-linux)<br/>
+HeartLib can be installed via [this AUR package](https://aur.archlinux.org/packages/heartlib)<br/>
+DevKit Advance for Linux can be installed via [this AUR package](https://aur.archlinux.org/packages/devkitadv)<br/>
